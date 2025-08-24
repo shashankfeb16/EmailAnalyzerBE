@@ -1,5 +1,5 @@
-import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Document } from 'mongoose';
+import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
+import { Document } from "mongoose";
 
 @Schema({ timestamps: true })
 export class Email {
@@ -38,7 +38,7 @@ export class Email {
     encryption: string;
   };
 
-  @Prop({ default: 'processed' })
+  @Prop({ default: "processed" })
   status: string;
 }
 

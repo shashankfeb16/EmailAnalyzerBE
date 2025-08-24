@@ -1,17 +1,15 @@
-import { NestFactory } from '@nestjs/core';
-import { ValidationPipe } from '@nestjs/common';
-import { AppModule } from './app.module';
+import { NestFactory } from "@nestjs/core";
+import { ValidationPipe } from "@nestjs/common";
+import { AppModule } from "./app.module";
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
-  // Enable CORS for frontend connection
   app.enableCors({
-    origin: 'http://localhost:3001', // React app URL
+    origin: "http://localhost:5173",
     credentials: true,
   });
 
-  // Global validation pipe
   app.useGlobalPipes(new ValidationPipe());
 
   const port = process.env.PORT || 3000;
