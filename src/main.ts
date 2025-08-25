@@ -17,7 +17,6 @@ async function bootstrap() {
   await app.listen(port);
 
   console.log(`🚀 Email Analyzer Backend running on: http://localhost:${port}`);
-  console.log(`📧 Test endpoint: http://localhost:${port}/emails/test-info`);
   console.log(`📋 View emails: http://localhost:${port}/emails`);
 }
 

@@ -50,37 +50,6 @@ export class EmailController {
     }
   }
 
-  @Get("test-info")
-  getTestInfo() {
-    return {
-      title: "Email Analyzer Test Information",
-      message: "Send POST request to /emails/process with email headers",
-      endpoint: "POST /emails/process",
-      samplePayload: {
-        subject: "Test Email from Gmail",
-        from: "sender@gmail.com",
-        to: "receiver@example.com",
-        messageId: "<test123@gmail.com>",
-        headers: {
-          received: [
-            "from mail-wr1-f41.google.com (mail-wr1-f41.google.com [209.85.221.41]) by mx.google.com with ESMTPS",
-            "from smtp.gmail.com ([209.85.128.20]) by mail-wr1-f41.google.com",
-          ],
-          "x-gm-message-state": "AOAM533...",
-          "x-google-dkim-signature": "v=1; a=rsa-sha256...",
-          "authentication-results":
-            "mx.google.com; spf=pass; dkim=pass; dmarc=pass",
-        },
-      },
-      availableEndpoints: [
-        "GET /emails - List all emails",
-        "GET /emails/:id - Get specific email",
-        "GET /emails/esp/:espType - Filter by ESP",
-        "GET /emails/analytics - Get statistics",
-        "POST /emails/process - Process new email",
-      ],
-    };
-  }
 
   @Get(":id")
   async getEmailById(@Param("id") id: string) {
